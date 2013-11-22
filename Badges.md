@@ -4,7 +4,7 @@ Do you use Grunt in your projects and want to proudly display that in your proje
 
 That's why we had our very own [Isaac Durazo](http://github.com/isaacdurazo) make a Grunt mini-badge that you can add to your Readme file. If you are using the Travis mini-badges ours fits nicely next to it.
 
-ADD IMAGE DISPLAYING BOTH NEXT TO EACH OTHER THERE
+![Travis Ci Build Passing](https://api.travis-ci.org/travis-ci/travis-ci.png) [![Built With Grunt](http://grunt-badge.herokuapp.com/cdn/bwg.png)](http://gruntjs.com)
 
 Just copy and paste the following code snippet and place it right underneath the headline in your Readme:
 
