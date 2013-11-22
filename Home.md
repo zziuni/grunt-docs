@@ -21,7 +21,7 @@ Development Version: **master**
 * [[Help Resources]]
 * [[Who uses Grunt]]
 * [[Contributing]]
-* [[Mini Badge]]
+* [[Badges]]
 
 ### Migration guides
 * [[Upgrading from 0.3 to 0.4]]
