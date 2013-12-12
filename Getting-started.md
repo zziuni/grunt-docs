@@ -1,8 +1,5 @@
 Grunt와 Grunt 플러그인의 설치와 관리는 [npm](https://npmjs.org/)을 통해서 한다. npm은 [Node.js](http://nodejs.org/)의 패키지 메니징 도구다.
 
-
-_Grunt 0.4.x requires stable Node.js versions `>= 0.8.0`. Odd version numbers of Node.js are considered unstable development versions._
-
 _Grunt 0.4.x를 사용하려면 Node.js 버전이 `>=0.8.0` 이여야 한다. Node.js에서 홀수 버전은 안정화 되지 않은 개발 버전이다._
 
 ## Installing the CLI
@@ -95,7 +92,7 @@ grunt 플러그인과 다른 node 모듈도 마찬가지다. 이렇게 설치하
 ```js
 module.exports = function(grunt) {
 
-  // Project configuration.
+  // 프로젝트 환경설정.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
@@ -109,7 +106,7 @@ module.exports = function(grunt) {
     }
   });
 
-  // Load the plugin that provides the "uglify" task.
+  // "uglify" task를 지원하는 플러그인 로드.
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default task(s).
@@ -125,7 +122,7 @@ module.exports = function(grunt) {
 
 ```js
 module.exports = function(grunt) {
-  // Do grunt-related things in here
+  // grunt 관련 코드는 여기에
 };
 ```
 
@@ -139,7 +136,7 @@ module.exports = function(grunt) {
 다른 task도 마찬가지지만, [grunt-contrib-uglify] 플러그인의 `uglify` task는 configuration 객체에서 동명의 프로퍼티 명(uglify)으로 설정에 필요한 값을 찾는다. 여기서는 옵션값인 `banner`와 소스파일(src) 하나를 타겟파일(dest) 하나로 미니파이(minify)하는 어그리파이(uglify) 타겟명인 `build`를 지정했다.
 
 ```js
-// Project configuration.
+// 프로젝트 환경설정.
 grunt.initConfig({
   pkg: grunt.file.readJSON('package.json'),
   uglify: {
@@ -158,7 +155,7 @@ grunt.initConfig({
 자주 사용하는 [concatenation], [minification], [linting]같은 task들은 [grunt plugins]으로 설정해서 사용할 수 있다. 즉, `package.json`의 dependency에 플러그인을 설정했다면, `npm install`을 통해서 이미 설치된 것이므로, 간단한 코드 추가로 `Gurntfile`에서 사용 가능하다.
 
 ```js
-// Load the plugin that provides the "uglify" task.
+// "uglify" task를 지원하는 플러그인 로드.
 grunt.loadNpmTasks('grunt-contrib-uglify');
 ```
 
@@ -177,7 +174,7 @@ grunt.registerTask('default', ['uglify']);
 ```js
 module.exports = function(grunt) {
 
-  // A very basic default task.
+  // default task의 기본형.
   grunt.registerTask('default', 'Log some stuff.', function() {
     grunt.log.write('Logging some stuff...').ok();
   });
@@ -188,12 +185,6 @@ module.exports = function(grunt) {
 프로젝트 전용 task라면 `Gruntfile`안에 정의할 필요없이. 별도의 `.js` 파일로 정의하고 [[grunt.loadTasks|grunt#grunt.loadtasks]] 메서드로 불러와도 된다.
 
 ## Further Reading
-
-* The [[Installing grunt]] guide has detailed information about installing specific, production or in-development, versions of Grunt and grunt-cli.
-* The [[Configuring Tasks]] guide has an in-depth explanation on how to configure tasks, targets, options and files inside the `Gruntfile`, along with an explanation of templates, globbing patterns and importing external data.
-* The [[Creating Tasks]] guide lists the differences between the types of Grunt tasks and shows a number of sample tasks and configurations.
-* For more information about writing custom tasks or Grunt plugins, check out the [[developer documentation|grunt]].
-
 * [[Installing grunt]] 가이드는 인스톨 스펙, 프로덕션, 개발, Grunt와 grunt-cli의 버전에 대한 상세한 정보를 제공한다.
 * [[Configuring Tasks]] 가이드는 `Gruntfile`에서 task, target, option, file을 설정하는 방법을 상세하게 설명한다. tempaltes, globbing pattern, importing external data도 설명한다.
 * [[Creating Tasks]] 가이드에는 Grunt task의 타입간의 차이점 목록이 있으며, task와 configuration의 샘플도 제공한다.
