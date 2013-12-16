@@ -6,7 +6,7 @@
 
 
 ## Does Grunt work on Windows?
-Window에서도 Grunt를 사용할 수 있다. [Node.js](http://nodejs.org/)와 [npm](http://npmjs.org/)가 Window에서 잘 동작하므로 Grunt도 문제없이 동작한다. Node.js 구버전이 [Cygwin](http://www.cygwin.com/)에 번들 되어있어서 보통 문제는 Cygwin에서 생긴다.
+Window에서도 Grunt를 사용할 수 있다. [Node.js](http://nodejs.org/)와 [npm](http://npmjs.org/)가 Window에서 잘 동작하므로 Grunt도 문제없이 동작한다. Node.js 구 버전이 [Cygwin](http://www.cygwin.com/)에 번들 되어있어서 보통 문제는 Cygwin에서 생긴다.
 
 이 문제를 안 겪으려면 `git`은 [msysGit installer](http://msysgit.github.com/)으로, `node`와 `npm`은 [Node.js installer](http://nodejs.org/#download)으로 설치한다. 그리고 쉘은 Cygwin대신에 [Windows command prompt](http://www.cs.princeton.edu/courses/archive/spr05/cos126/cmd-prompt.html)나 [PowerShell](http://support.microsoft.com/kb/968929)을 사용한다.
 

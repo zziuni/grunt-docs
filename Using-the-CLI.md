@@ -1,4 +1,4 @@
-컴멘드 명령어 `grunt`는 몇가지 옵션을 가지고 있다. 이 옵션들을 보고 싶으면 터미널에 `grunt -h`라고 입력해라.
+컴멘드 명령어 `grunt`는 몇 가지 옵션을 가지고 있다. 이 옵션들을 보고 싶으면 터미널에 `grunt -h`라고 입력해라.
 
 ### --help, -h
 도움말 출력.
@@ -14,7 +14,7 @@
 ### --gruntfile
 다른 `Gruntfile`을 지정한다.
 
-grunt은 원래 현재 폴더나 가장 가까운 상위 폴더에서 `Gruntfile.js`, `Gruntfile.coffe`를 찾는다.
+grunt는 원래 현재 폴더나 가장 가까운 상위 폴더에서 `Gruntfile.js`, `Gruntfile.coffe`를 찾는다.
 
 ### --debug, -d
 이 옵션을 task가 지원할 경우 디버깅 모드를 활성화한다.
@@ -38,7 +38,7 @@ task와 추가 파일을 탐색할 이미 설치된 npm grunt plugin
 `grunt.loadNpmTasks(...)`와 같다.
 
 ### --no-write
-화일 작성을 금한다.
+파일 작성을 금한다.
 
 ### --verbose, -v
 

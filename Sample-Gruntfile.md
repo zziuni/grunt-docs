@@ -15,7 +15,7 @@ module.exports = function(grunt){
 }
 ```
 
-이 함수안에서 환경설정 객체를 생성할 수 있다.
+이 함수 안에서 환경설정 객체를 생성할 수 있다.
 
 ```javascript
 grunt.initConfig({
@@ -193,7 +193,6 @@ module.exports = function(grunt) {
 
 };
 ```
-
 
 
 

@@ -1,10 +1,10 @@
-Grunt와 Grunt 플러그인의 설치와 관리는 [npm](https://npmjs.org/)을 통해서 한다. npm은 [Node.js](http://nodejs.org/)의 패키지 메니징 도구다.
+Grunt와 Grunt 플러그인의 설치와 관리는 [npm](https://npmjs.org/) 을 통해서 한다. npm은 [Node.js](http://nodejs.org/)의 패키지 메니징 도구다.
 
-_Grunt 0.4.x를 사용하려면 Node.js 버전이 `>=0.8.0` 이여야 한다. Node.js에서 홀수 버전은 안정화 되지 않은 개발 버전이다._
+_Grunt 0.4.x를 사용하려면 Node.js 버전이 `>=0.8.0` 이여야 한다. Node.js에서 홀수 버전은 안정화되지 않은 개발 버전이다._
 
 ## Installing the CLI
 
-**Grunt 0.3을 이미 사용하고 있고 0.4.x로 업그레이드 하는 거라면, [Grunt 0.3 Notes](upgrading-from-0.3-to-0.4#grunt-0.3-notes) 문서를 먼저 보자.**
+**Grunt 0.3을 이미 사용하고 있고 0.4.x로 업그레이드하는 거라면, [Grunt 0.3 Notes](upgrading-from-0.3-to-0.4#grunt-0.3-notes) 문서를 먼저 보자.**
 
 Grunt를 사용하려면 먼저 콘솔 어디서나 실행할 수 있는 Grunt's Command line interface (CLI)를 설치해야 한다. 이때 OSX나 *nix, BSD에서는 sudo가, 윈도우즈에서는 administrator 권한이 필요할 수도 있다.
 
@@ -13,7 +13,7 @@ Grunt를 사용하려면 먼저 콘솔 어디서나 실행할 수 있는 Grunt's
 npm install -g grunt-cli
 ```
 
-`grunt-cli`를 설치하면, 여러분의 시스템 경로에 `grunt`란 컴멘드가 자동으로 추가해서, 어느 디렉토리에서나 `grunt`를 사용할 수 있게 된다.
+`grunt-cli`를 설치하면, 여러분의 시스템 경로에 `grunt`란 컴멘드가 자동으로 추가해서, 어느 디렉터리에서나 `grunt`를 사용할 수 있게 된다.
 
 그러나 `grunt-cli`가 Grunt task runner(즉, `grunt`)를 설치하지는 않는다. Grunt CLI의 역할은 그저 `Gruntflie`라는 파일이 있는 위치에 설치된 Grunt를 찾아서 실행하는 것이다. 그러므로, 한 장비에서 여러 버전의 Grunt를 설치할 수 있다.
 
@@ -29,11 +29,11 @@ npm install -g grunt-cli
 ## Working with an existing Grunt project
 만약 이미 Grunt CLI가 설치되어있고, 해당 프로젝트에 `package.json`과 `Grunfile`를 설정했다면, 한결 쉽게 작업할 수 있다.
 
-1. 프로젝트 루트 폴터로 이동한다.
+1. 프로젝트 루트 폴더로 이동한다.
 1. `npm install`로 프로젝트가 참조하는 모듈들을 설치한다.
 1. `grunt`를 실행한다.
 
-이게 전부다. 사용가능한 task는 `gurnt --help` 컴멘드로 볼 수 있지만 보통 해당 프로젝트 문서를 참고한다.
+이게 전부다. 사용 가능한 task는 `gurnt --help` 컴멘드로 볼 수 있지만 보통 해당 프로젝트 문서를 참고한다.
 
 ## Preparing a new Grunt project
 프로젝트를 새로 시작할 때는 보통 `package.json`과 `Grunfile`라는 파일이  먼저 있어야 한다.
@@ -159,7 +159,7 @@ grunt.initConfig({
 grunt.loadNpmTasks('grunt-contrib-uglify');
 ```
 
-**참고**: `grunt --help` 명령어를 사용하면 사용가능한 taks 목록을 볼 수 있다.
+**참고**: `grunt --help` 명령어를 사용하면 사용 가능한 taks 목록을 볼 수 있다.
 
 ### Custom tasks
 `default` task를 설정하면 기본으로 실행할 task를 하나 혹은 그 이상 지정할 수 있다. 예를 들면, 컴맨드 라인에 특정 task를 지정하지 않고 `grunt`만 입력하면 `uglify` task가 실행된다. 이는 실제로는 `grunt uglify`나 `grunt default`와 같다. 배열 안에는 다수의 task를 지정할 수도 있다. (아규먼트는 있을 수도 있고 없을 수도 있다.)

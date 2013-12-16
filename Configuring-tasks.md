@@ -14,7 +14,7 @@ task 환경설정은 `Gruntfile`에서 `grunt.initConfig` 메서드를 통해서
       uglify: {
         // uglify task를 위한 환경설정은 여기에 넣는다.
       },
-      // 특정 task와 관련없는 임의의 프로퍼티
+      // 특정 task와 관련 없는 임의의 프로퍼티
       my_property: 'whatever',
       my_src_files: ['foo/*.js', 'bar/*.js'],
     });
@@ -344,7 +344,6 @@ Grunt는 JSON과 YAML 데이터를 가져올 수 있는 `grunt.file.readJSON`와
       }
     });
 ```
-
 
 
 
