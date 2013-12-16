@@ -1,12 +1,12 @@
-이 문서는 특정 버전의 Grunt와 Grunt plugin 설치하는 방법에 대해 다룬다. 이 문서를 보기전에 [[Getting Started]]을 먼저 보고 봐야 한다.
+이 문서는 특정 버전의 Grunt와 Grunt plugin 설치하는 방법에 대해 다룬다. 이 문서를 보기 전에 [[Getting Started]]을 먼저 보고 봐야 한다.
 
 ## Overview
-Grunt와 Grunt plugin은 [package.json](https://npmjs.org/doc/json.html)의 [devDependencies](https://npmjs.org/doc/json.html#devDependencies)에 정의되어 있어야 한다. 그래야 `npm install` 컴멘트 명령어 한방으로 프로젝트와 관련된 의존성 모듈 모두를 설치할 수 있다.  Grunt 위키 [첫 페이지](https://github.com/gruntjs/grunt/wiki/)에서 Grunt의 최신 안정 버전과 개발버전을 확인할 수 있다.
+Grunt와 Grunt plugin은 [package.json](https://npmjs.org/doc/json.html)의 [devDependencies](https://npmjs.org/doc/json.html#devDependencies)에 정의되어 있어야 한다. 그래야 `npm install` 컴멘트 명령어 한방으로 프로젝트와 관련된 의존성 모듈 모두를 설치할 수 있다.  Grunt 위키 [첫 페이지](https://github.com/gruntjs/grunt/wiki/)에서 Grunt의 최신 안정 버전과 개발 버전을 확인할 수 있다.
 
 ## Installing a specific version
 특정 버전의 Grunt나 Grunt plugin이 필요하다면, `npm install grunt@VERSION --save-dev`를 실행한다. 이때 `VERSION`에는 여러분이 필요한 버전을 넣어준다. 그러면 nmp이 그 버전을 설치하고 알아서 package.json의 devDependencies에 이를 추가한다.
 
-`npm install`과 `--save-dev` 옵션을 같이 쓸 때, `package.json`에서 추가되는 모듈의 버전은 [tilde version range]이 사용된다. 이는 장점이 많다. [semver]단위로 개발이 지속되기 때문에 지정한 버전에 새로운 패치가 릴리즈 되면 자동으로 업그레이드 한다.
+`npm install`과 `--save-dev` 옵션을 같이 쓸 때, `package.json`에서 추가되는 모듈의 버전은 [tilde version range]이 사용된다. 이는 장점이 많다. [semver]단위로 개발이 지속되기 때문에 지정한 버전에 새로운 패치가 릴리즈 되면 자동으로 업그레이드한다.
 
 [tilde version range]: https://npmjs.org/doc/json.html#Tilde-Version-Ranges
 [semver]: http://semver.org
@@ -16,7 +16,7 @@ Grunt와 Grunt plugin은 [package.json](https://npmjs.org/doc/json.html)의 [dev
 
 Grunt 특정 버전 설치과정과 동일하게 `npm install grunt@VERSION --save-dev` 컴멘드 명령어에 필요한 `VERSION`을 넣어서 실하면 npm이 프로젝트 폴더에 그 버전의 Grunt를 설치하고`package.json`의 devDependencies에 모듈 버전을 추가한다.
 
-한가지, 여러분이 지정한 버전과 상관없이 [tilde version range][]가 `package.json`에 설정된다. **이건 별로 좋지 않다.** 지정한 개발 버전에 신규 패치가 릴리즈 되었고 그 패치가 여러분의 빌드를 깨는 코드라해도 npm을 통해서 설치될 수 있기 때문이다.
+한가지, 여러분이 지정한 버전과 상관없이 [tilde version range][]가 `package.json`에 설정된다. **이건 별로 좋지 않다.** 지정한 개발 버전에 신규 패치가 릴리즈 되었고 그 패치가 여러분의 빌드를 깨는 코드라 해도 npm을 통해서 설치될 수 있기 때문이다.
 
 _이런 경우, 수동으로 `package.json`의 devDependencies에서 ~(tilde)를 **꼭 제거해야 한다.** 그러면 grunt는 그 특정 개발 버전에만 한정된다._
 
