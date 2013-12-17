@@ -13,7 +13,7 @@ Grunt를 사용하려면 먼저 콘솔 어디서나 실행할 수 있는 Grunt's
 npm install -g grunt-cli
 ```
 
-`grunt-cli`를 설치하면, 여러분의 시스템 경로에 `grunt`란 컴멘드가 자동으로 추가해서, 어느 디렉터리에서나 `grunt`를 사용할 수 있게 된다.
+`grunt-cli`를 설치하면, 여러분의 시스템 경로에 `grunt`란 커멘드가 자동으로 추가해서, 어느 디렉터리에서나 `grunt`를 사용할 수 있게 된다.
 
 그러나 `grunt-cli`가 Grunt task runner(즉, `grunt`)를 설치하지는 않는다. Grunt CLI의 역할은 그저 `Gruntflie`라는 파일이 있는 위치에 설치된 Grunt를 찾아서 실행하는 것이다. 그러므로, 한 장비에서 여러 버전의 Grunt를 설치할 수 있다.
 
@@ -33,7 +33,7 @@ npm install -g grunt-cli
 1. `npm install`로 프로젝트가 참조하는 모듈들을 설치한다.
 1. `grunt`를 실행한다.
 
-이게 전부다. 사용 가능한 task는 `grunt --help` 컴멘드로 볼 수 있지만 보통 해당 프로젝트 문서를 참고한다.
+이게 전부다. 사용 가능한 task는 `grunt --help` 커멘드로 볼 수 있지만 보통 해당 프로젝트 문서를 참고한다.
 
 ## Preparing a new Grunt project
 프로젝트를 새로 시작할 때는 보통 `package.json`과 `Grunfile`라는 파일이  먼저 있어야 한다.
@@ -44,12 +44,12 @@ npm install -g grunt-cli
 
 ## package.json
 
-`package.json`파일은 `Gruntfile`과 함께 프로젝트 루트 디렉토리에 있어야 하고, 프로젝트 소스와 함께 커밋(commit)되야 한다. `package.json`이 있는 폴더에서 컴맨드 명령어 `npm install`를 실행하면 이 파일 안에 있는 dependency 목록의 모듈들을 해당 버전으로 인스톨한다.
+`package.json`파일은 `Gruntfile`과 함께 프로젝트 루트 디렉토리에 있어야 하고, 프로젝트 소스와 함께 커밋(commit)되야 한다. `package.json`이 있는 폴더에서 커멘드 명령어 `npm install`를 실행하면 이 파일 안에 있는 dependency 목록의 모듈들을 해당 버전으로 인스톨한다.
 
 프로젝트에 `package.json`를 추가하는 방법은 여러가지가 있다.
 
 * 대부분의 [grunt-init] 템플릿은 자동으로 프로젝트 전용  `package.json`파일을 생성한다.
-* [npm init] 컴맨드 명령어는 기본 `package.json`을 생성한다.
+* [npm init] 커멘드 명령어는 기본 `package.json`을 생성한다.
 * 다음 예제를 기초로 필요한 부분은 [specification][json] 문서를 참고 해서 확장한다.
 
 ```js
@@ -66,9 +66,9 @@ npm install -g grunt-cli
 ```
 
 ### Installing Grunt and gruntplugins
-Grunt와 플러그인을 설치와 동시에 `package.json`와 연동시키려면 `npm install <module> --save-dev` 컴맨드 명령어를 사용한다. 이러면 `<module>`만 설치하고 끝나지 않고, 자동으로 `package.json`의 [devDependencies] 항목에 추가된다. 버전은 [tilde version range]를 사용한다.
+Grunt와 플러그인을 설치와 동시에 `package.json`와 연동시키려면 `npm install <module> --save-dev` 커멘드 명령어를 사용한다. 이러면 `<module>`만 설치하고 끝나지 않고, 자동으로 `package.json`의 [devDependencies] 항목에 추가된다. 버전은 [tilde version range]를 사용한다.
 
-예를 들면, 다음 컴맨드 명령어는 프로젝트에 Grunt 최신버전을 설치하고 `package.json`의 devDependencies 항목에 grunt를 추가한다.
+예를 들면, 다음 커멘드 명령어는 프로젝트에 Grunt 최신버전을 설치하고 `package.json`의 devDependencies 항목에 grunt를 추가한다.
 
 ```shell
 npm install grunt --save-dev
@@ -87,7 +87,7 @@ grunt 플러그인과 다른 node 모듈도 마찬가지다. 이렇게 설치하
 * 사용자 정의 task
 
 ### An example Gruntfile
-다음 `Gruntfile`은 프로젝트의 메타데이터를 `package.json`에서 가져와서 Grunt config로 주입한다. 그리고 [grunt-contrib-uglify] 플러그인의 `uglify` task을 사용해서 소스코드를 미니파이(minify)하도록 설정하고, 메타데이터를 이용해서 동적인 베너 주석도 생성한다. 그리고 `uglify` task를 컴맨드 라인에서 `grunt` 명령어를 실행할 때 실행되는 기본 task로 지정했다.
+다음 `Gruntfile`은 프로젝트의 메타데이터를 `package.json`에서 가져와서 Grunt config로 주입한다. 그리고 [grunt-contrib-uglify] 플러그인의 `uglify` task을 사용해서 소스코드를 미니파이(minify)하도록 설정하고, 메타데이터를 이용해서 동적인 베너 주석도 생성한다. 그리고 `uglify` task를 커멘드 라인에서 `grunt` 명령어를 실행할 때 실행되는 기본 task로 지정했다.
 
 ```js
 module.exports = function(grunt) {
@@ -162,7 +162,7 @@ grunt.loadNpmTasks('grunt-contrib-uglify');
 **참고**: `grunt --help` 명령어를 사용하면 사용 가능한 taks 목록을 볼 수 있다.
 
 ### Custom tasks
-`default` task를 설정하면 기본으로 실행할 task를 하나 혹은 그 이상 지정할 수 있다. 예를 들면, 컴맨드 라인에 특정 task를 지정하지 않고 `grunt`만 입력하면 `uglify` task가 실행된다. 이는 실제로는 `grunt uglify`나 `grunt default`와 같다. 배열 안에는 다수의 task를 지정할 수도 있다. (아규먼트는 있을 수도 있고 없을 수도 있다.)
+`default` task를 설정하면 기본으로 실행할 task를 하나 혹은 그 이상 지정할 수 있다. 예를 들면, 커멘드 라인에 특정 task를 지정하지 않고 `grunt`만 입력하면 `uglify` task가 실행된다. 이는 실제로는 `grunt uglify`나 `grunt default`와 같다. 배열 안에는 다수의 task를 지정할 수도 있다. (아규먼트는 있을 수도 있고 없을 수도 있다.)
 
 ```js
 // Default task(s).
