@@ -1,55 +1,56 @@
-Grunt and Grunt plugins are installed and managed via [npm](https://npmjs.org/), the [Node.js](http://nodejs.org/) package manager.
+Grunt와 Grunt 플러그인의 설치와 관리는 [npm](https://npmjs.org/) 을 통해서 한다. npm은 [Node.js](http://nodejs.org/)의 패키지 메니징 도구다.
 
-
-_Grunt 0.4.x requires stable Node.js versions `>= 0.8.0`. Odd version numbers of Node.js are considered unstable development versions._
+_Grunt 0.4.x를 사용하려면 Node.js 버전이 `>=0.8.0` 이여야 한다. Node.js에서 홀수 버전은 안정화되지 않은 개발 버전이다._
 
 ## Installing the CLI
-**If you're upgrading from Grunt 0.3, please see [Grunt 0.3 Notes](upgrading-from-0.3-to-0.4#grunt-0.3-notes)**
 
-In order to get started, you'll want to install Grunt's command line interface (CLI) globally.  You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
+**Grunt 0.3을 이미 사용하고 있고 0.4.x로 업그레이드하는 거라면, [Grunt 0.3 Notes](upgrading-from-0.3-to-0.4#grunt-0.3-notes) 문서를 먼저 보자.**
+
+Grunt를 사용하려면 먼저 콘솔 어디서나 실행할 수 있는 Grunt's Command line interface (CLI)를 설치해야 한다. 이때 OSX나 *nix, BSD에서는 sudo가, 윈도우즈에서는 administrator 권한이 필요할 수도 있다.
+
 
 ```shell
 npm install -g grunt-cli
 ```
 
-This will put the `grunt` command in your system path, allowing it to be run from any directory.
+`grunt-cli`를 설치하면, 여러분의 시스템 경로에 `grunt`란 컴멘드가 자동으로 추가해서, 어느 디렉터리에서나 `grunt`를 사용할 수 있게 된다.
 
-Note that installing `grunt-cli` does not install the Grunt task runner!  The job of the Grunt CLI is simple: run the version of Grunt which has been installed next to a `Gruntfile`.
-This allows multiple versions of Grunt to be installed on the same machine simultaneously.
+그러나 `grunt-cli`가 Grunt task runner(즉, `grunt`)를 설치하지는 않는다. Grunt CLI의 역할은 그저 `Gruntflie`라는 파일이 있는 위치에 설치된 Grunt를 찾아서 실행하는 것이다. 그러므로, 한 장비에서 여러 버전의 Grunt를 설치할 수 있다.
+
 
 ## How the CLI works
 
-Each time `grunt` is run, it looks for a locally installed Grunt using node's `require()` system. Because of this, you can run `grunt` from any subfolder in your project.
+`grunt` 컴멘트를 치면, grunt-cli가 node의 `require()`를 사용해서 프로젝트 로컬의 grunt를 실행한다. 그러므로 해당 프로젝트의 루트 폴더가 아니여도 하위 폴더 어디서든 `grunt`를 실행할 수 있다.
 
-If a locally installed Grunt is found, the CLI loads the local installation of the Grunt library, applies the configuration from your `Gruntfile`, and executes any tasks you've requested for it to run.
+특정 위치에 설치된 Grunt를 찾은 후에 CLI는 Grunt 라이브러리의 로컬 설치 본을 불러온다. 이때  필요한 환경을 설정하기 위해서 `Gruntfile`란 파일을 사용한다. 그리고 CLI는 그 안에 어떤 동작을 위해 설정한 task들을 실행한다.
 
-*To really understand what is happening, [read the code](https://github.com/gruntjs/grunt-cli/blob/master/bin/grunt).  It's very short.*
+*이 과정이 더 궁금하면 [코드](https://github.com/gruntjs/grunt-cli/blob/master/bin/grunt)를 읽어보자. 겁나 짧다.*
 
 ## Working with an existing Grunt project
-Assuming that the Grunt CLI has been installed and that the project has already been configured with a `package.json` and a `Gruntfile`, it's very easy to start working with Grunt:
+만약 이미 Grunt CLI가 설치되어있고, 해당 프로젝트에 `package.json`과 `Grunfile`를 설정했다면, 한결 쉽게 작업할 수 있다.
 
-1. Change to the project's root directory.
-1. Install project dependencies with `npm install`.
-1. Run Grunt with `grunt`.
+1. 프로젝트 루트 폴더로 이동한다.
+1. `npm install`로 프로젝트가 참조하는 모듈들을 설치한다.
+1. `grunt`를 실행한다.
 
-That's really all there is to it. Installed Grunt tasks can be listed by running `grunt --help` but it's usually a good idea to start with the project's documentation.
+이게 전부다. 사용 가능한 task는 `grunt --help` 컴멘드로 볼 수 있지만 보통 해당 프로젝트 문서를 참고한다.
 
 ## Preparing a new Grunt project
-A typical setup will involve adding two files to your project: `package.json` and the `Gruntfile`.
+프로젝트를 새로 시작할 때는 보통 `package.json`과 `Grunfile`라는 파일이  먼저 있어야 한다.
 
-**package.json**: This file is used by [npm] to store metadata for projects published as npm modules.  You will list grunt and the Grunt plugins your project needs as [devDependencies] in this file.
+**package.json**: 이 파일은 해당 프로젝트를 npm 모듈로 [npm]에 퍼블리싱할 때 사용하는 메타데이터 저장 파일이다. 프로젝트에 필요한 grunt와 grunt 플러그인들은 이 파일의 [devDependencies]라는 항목에 나열한다.
 
-**Gruntfile**: This file is named `Gruntfile.js` or `Gruntfile.coffee` and is used to configure or define tasks and load Grunt plugins. 
+**Gruntfile**: 이 파일의 이름은 `Gruntfile.js`이거나 `Gruntfile.coffee`이다. task를 설정하거나 정의하고 Grunt 플러그인을 불러오는데 사용한다.
 
 ## package.json
 
-The `package.json` file belongs in the root directory of your project, next to the `Gruntfile`, and should be committed with your project source.  Running `npm install` in the same folder as a `package.json` file will install the correct version of each dependency listed therein.
+`package.json`파일은 `Gruntfile`과 함께 프로젝트 루트 디렉토리에 있어야 하고, 프로젝트 소스와 함께 커밋(commit)되야 한다. `package.json`이 있는 폴더에서 컴맨드 명령어 `npm install`를 실행하면 이 파일 안에 있는 dependency 목록의 모듈들을 해당 버전으로 인스톨한다.
 
-There are a few ways to create a `package.json` file for your project:
+프로젝트에 `package.json`를 추가하는 방법은 여러가지가 있다.
 
-* Most [grunt-init] templates will automatically create a project-specific `package.json` file.
-* The [npm init] command will create a basic `package.json` file.
-* Start with the example below, and expand as needed, following this [specification][json].
+* 대부분의 [grunt-init] 템플릿은 자동으로 프로젝트 전용  `package.json`파일을 생성한다.
+* [npm init] 컴맨드 명령어는 기본 `package.json`을 생성한다.
+* 다음 예제를 기초로 필요한 부분은 [specification][json] 문서를 참고 해서 확장한다.
 
 ```js
 {
@@ -65,33 +66,33 @@ There are a few ways to create a `package.json` file for your project:
 ```
 
 ### Installing Grunt and gruntplugins
-The easiest way to add Grunt and gruntplugins to an existing `package.json` is with the command `npm install <module> --save-dev`.  Not only will this install `<module>` locally, but it will automatically be added to the [devDependencies] section, using a [tilde version range].
+Grunt와 플러그인을 설치와 동시에 `package.json`와 연동시키려면 `npm install <module> --save-dev` 컴맨드 명령어를 사용한다. 이러면 `<module>`만 설치하고 끝나지 않고, 자동으로 `package.json`의 [devDependencies] 항목에 추가된다. 버전은 [tilde version range]를 사용한다.
 
-For example, this will install the latest version of Grunt in your project folder, adding it to your devDependencies:
+예를 들면, 다음 컴맨드 명령어는 프로젝트에 Grunt 최신버전을 설치하고 `package.json`의 devDependencies 항목에 grunt를 추가한다.
 
 ```shell
 npm install grunt --save-dev
 ```
 
-The same can be done for gruntplugins and other node modules. Be sure to commit the updated `package.json` file with your project when you're done!
+grunt 플러그인과 다른 node 모듈도 마찬가지다. 이렇게 설치하면 프로젝트의 `package.json`이 갱신된다.
 
 ## The Gruntfile
-The `Gruntfile.js` or `Gruntfile.coffee` file is a valid JavaScript or CoffeeScript file that belongs in the root directory of your project, next to the `package.json` file, and should be committed with your project source.
+`Gruntfile.js`나 `Gruntfile.coffee`파일은 `package.json`와 함께 프로젝트 루트 폴더에 있어야 하는 자바스크립트 혹은, 커피스크립트 파일이다. 그리고 이 파일은 프로젝트 소스의 일부로 같이 커밋되야 한다.
 
-A `Gruntfile` is comprised of the following parts:
+다음은 `Gruntfile`의 내부 구성요소다.
 
-* The "wrapper" function
-* Project and task configuration
-* Loading Grunt plugins and tasks
-* Custom tasks
+* "wrapper" 함수.
+* 프로젝트와 task의 환경설정.
+* grunt plugin과 task 로딩.
+* 사용자 정의 task
 
 ### An example Gruntfile
-In the following `Gruntfile`, project metadata is imported into the Grunt config from the project's `package.json` file and the [grunt-contrib-uglify] plugin's `uglify` task is configured to minify a source file and generate a banner comment dynamically using that metadata. When `grunt` is run on the command line, the `uglify` task will be run by default.
+다음 `Gruntfile`은 프로젝트의 메타데이터를 `package.json`에서 가져와서 Grunt config로 주입한다. 그리고 [grunt-contrib-uglify] 플러그인의 `uglify` task을 사용해서 소스코드를 미니파이(minify)하도록 설정하고, 메타데이터를 이용해서 동적인 베너 주석도 생성한다. 그리고 `uglify` task를 컴맨드 라인에서 `grunt` 명령어를 실행할 때 실행되는 기본 task로 지정했다.
 
 ```js
 module.exports = function(grunt) {
 
-  // Project configuration.
+  // 프로젝트 환경설정.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
@@ -105,7 +106,7 @@ module.exports = function(grunt) {
     }
   });
 
-  // Load the plugin that provides the "uglify" task.
+  // "uglify" task를 지원하는 플러그인 로드.
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default task(s).
@@ -114,28 +115,28 @@ module.exports = function(grunt) {
 };
 ```
 
-Now that you've seen the whole `Gruntfile`, let's look at its component parts.
+이 코드가 우리가 볼 `Grunfile` 예제 코드의 전다. 파트별로 살펴보자.
 
 ### The "wrapper" function
-Every `Gruntfile` (and gruntplugin) uses this basic format, and all of your Grunt code must be specified inside this function:
+모든 `Gruntfile`(그리고 그 플러그인)은 래퍼(wrapper) 함수를 기본 형태로 사용한다. 모든 Grunt 코드는 이 함수 안쪽에 있어야 한다.
 
 ```js
 module.exports = function(grunt) {
-  // Do grunt-related things in here
+  // grunt 관련 코드는 여기에
 };
 ```
 
 ### Project and task configuration
-Most Grunt tasks rely on configuration data defined in an object passed to the [[grunt.initConfig|grunt#grunt.initconfig]] method.
+대부분의 Grunt task는 configuration을 위한 데이터로 [[grunt.initConfig|grunt#grunt.initconfig]]  메서드의 인자로 전달되는 객체를 사용한다.(이를 configuraton 객체라 하자.)
 
-In this example, `grunt.file.readJSON('package.json')` imports the JSON metadata stored in `package.json` into the grunt config. Because `<% %>` template strings may reference any config properties, configuration data like filepaths and file lists may be specified this way to reduce repetition.
+위의 예제에서, `grunt.file.readJSON('package.json')` 코드는 grunt config로 `package.json`에 저장된 JOSN 메타데이터를 인포트한다. 그러면 `<% %>` 템플릿 문자열을 사용해서 config의 모든 프로퍼티를 참조할 수 있다.(`package.json`값을 불러올 수 있다는 말이다.) 파일패스나 파일 목록 같은 configuration 데이터는 반복을 줄이기 위해서 이 방법으로 지정한다.
 
-You may store any arbitrary data inside of the configuration object, and as long as it doesn't conflict with properties your tasks require, it will be otherwise ignored. Also, because this is JavaScript, you're not limited to JSON; you may use any valid JS here. You can even programmatically generate the configuration if necessary.
+여러분의 task가 필요로하는 프로퍼티와 충돌하지 않는 이상 configuraton 객체안에는 어떤 값을 넣어도 상관없다. 그리고 이 파일은 단순 JSON이 아닌 자바스크립트 파일이므로, 유효한 JS코드는 모두 사용가능하다. 즉, 필요한 configuration을 동적으로 생성할 수도 있다.
 
-Like most tasks, the [grunt-contrib-uglify] plugin's `uglify` task expects its configuration to be specified in a property of the same name. Here, the `banner` option is specified, along with a single uglify target named `build` that minifies a single source file to a single destination file.
+다른 task도 마찬가지지만, [grunt-contrib-uglify] 플러그인의 `uglify` task는 configuration 객체에서 동명의 프로퍼티 명(uglify)으로 설정에 필요한 값을 찾는다. 여기서는 옵션값인 `banner`와 소스파일(src) 하나를 타겟파일(dest) 하나로 미니파이(minify)하는 어그리파이(uglify) 타겟명인 `build`를 지정했다.
 
 ```js
-// Project configuration.
+// 프로젝트 환경설정.
 grunt.initConfig({
   pkg: grunt.file.readJSON('package.json'),
   uglify: {
@@ -151,29 +152,29 @@ grunt.initConfig({
 ```
 
 ### Loading Grunt plugins and tasks
-Many commonly used tasks like [concatenation], [minification][grunt-contrib-uglify] and [linting] are available as [grunt plugins](https://github.com/gruntjs). As long as a plugin is specified in `package.json` as a dependency, and has been installed via `npm install`, it may be enabled inside your `Gruntfile` with a simple command:
+자주 사용하는 [concatenation], [minification], [linting]같은 task들은 [grunt plugins]으로 설정해서 사용할 수 있다. 즉, `package.json`의 dependency에 플러그인을 설정했다면, `npm install`을 통해서 이미 설치된 것이므로, 간단한 코드 추가로 `Gruntfile`에서 사용 가능하다.
 
 ```js
-// Load the plugin that provides the "uglify" task.
+// "uglify" task를 지원하는 플러그인 로드.
 grunt.loadNpmTasks('grunt-contrib-uglify');
 ```
 
-**Note:** the `grunt --help` command will list all available tasks.
+**참고**: `grunt --help` 명령어를 사용하면 사용 가능한 taks 목록을 볼 수 있다.
 
 ### Custom tasks
-You can configure Grunt to run one or more tasks by default by defining a `default` task. In the following example, running `grunt` at the command line without specifying a task will run the `uglify` task. This is functionally the same as explicitly running `grunt uglify` or even `grunt default`. Any number of tasks (with or without arguments) may be specified in the array.
+`default` task를 설정하면 기본으로 실행할 task를 하나 혹은 그 이상 지정할 수 있다. 예를 들면, 컴맨드 라인에 특정 task를 지정하지 않고 `grunt`만 입력하면 `uglify` task가 실행된다. 이는 실제로는 `grunt uglify`나 `grunt default`와 같다. 배열 안에는 다수의 task를 지정할 수도 있다. (아규먼트는 있을 수도 있고 없을 수도 있다.)
 
 ```js
 // Default task(s).
 grunt.registerTask('default', ['uglify']);
 ```
 
-If your project requires tasks not provided by a Grunt plugin, you may define custom tasks right inside the `Gruntfile`. For example, this `Gruntfile` defines a completely custom `default` task that doesn't even utilize task configuration:
+만약 프로젝트에서 Grunt 플러그인 목록에 없는 task가 필요하다면, `Gruntfile`에 직접 custom task를 만들 수도 있다. 예를 들면, 다음 `Gruntfile`은 task configuration을 전혀 활용하지 않는 custom `default` task를 정의한다.
 
 ```js
 module.exports = function(grunt) {
 
-  // A very basic default task.
+  // default task의 기본형.
   grunt.registerTask('default', 'Log some stuff.', function() {
     grunt.log.write('Logging some stuff...').ok();
   });
@@ -181,14 +182,14 @@ module.exports = function(grunt) {
 };
 ```
 
-Custom project-specific tasks don't need to be defined in the `Gruntfile`; they may be defined in external `.js` files and loaded via the [[grunt.loadTasks|grunt#grunt.loadtasks]] method.
+프로젝트 전용 task라면 `Gruntfile`안에 정의할 필요없이. 별도의 `.js` 파일로 정의하고 [[grunt.loadTasks|grunt#grunt.loadtasks]] 메서드로 불러와도 된다.
 
 ## Further Reading
+* [[Installing grunt]] 가이드는 인스톨 스펙, 프로덕션, 개발, Grunt와 grunt-cli의 버전에 대한 상세한 정보를 제공한다.
+* [[Configuring Tasks]] 가이드는 `Gruntfile`에서 task, target, option, file을 설정하는 방법을 상세하게 설명한다. tempaltes, globbing pattern, importing external data도 설명한다.
+* [[Creating Tasks]] 가이드에는 Grunt task의 타입간의 차이점 목록이 있으며, task와 configuration의 샘플도 제공한다.
+* custom task나 Grunt 플러그인에 대한 더 많은 정보는 [[developer documentation|grunt]]을 확인하자.
 
-* The [[Installing grunt]] guide has detailed information about installing specific, production or in-development, versions of Grunt and grunt-cli.
-* The [[Configuring Tasks]] guide has an in-depth explanation on how to configure tasks, targets, options and files inside the `Gruntfile`, along with an explanation of templates, globbing patterns and importing external data.
-* The [[Creating Tasks]] guide lists the differences between the types of Grunt tasks and shows a number of sample tasks and configurations.
-* For more information about writing custom tasks or Grunt plugins, check out the [[developer documentation|grunt]].
 
 [npm]: https://npmjs.org/
 [devDependencies]: https://npmjs.org/doc/json.html#devDependencies

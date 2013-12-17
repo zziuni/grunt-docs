@@ -1,28 +1,29 @@
-This document explains how to install specific versions of Grunt and Grunt plugins.  If you haven't read the [[Getting Started]] guide, you should check that out first.
+이 문서는 특정 버전의 Grunt와 Grunt plugin 설치하는 방법에 대해 다룬다. 이 문서를 보기 전에 [[Getting Started]]을 먼저 보고 봐야 한다.
 
 ## Overview
-Grunt and Grunt plugins should be defined as [devDependencies](https://npmjs.org/doc/json.html#devDependencies) in your project's [package.json](https://npmjs.org/doc/json.html).  This will allow you to install all of your project's dependencies with a single command: `npm install`.  The current stable and development versions of Grunt are always listed on the wiki's [home page](https://github.com/gruntjs/grunt/wiki/).
+Grunt와 Grunt plugin은 [package.json](https://npmjs.org/doc/json.html)의 [devDependencies](https://npmjs.org/doc/json.html#devDependencies)에 정의되어 있어야 한다. 그래야 `npm install` 컴멘트 명령어 한방으로 프로젝트와 관련된 의존성 모듈 모두를 설치할 수 있다.  Grunt 위키 [첫 페이지](https://github.com/gruntjs/grunt/wiki/)에서 Grunt의 최신 안정 버전과 개발 버전을 확인할 수 있다.
 
 ## Installing a specific version
-If you need a specific version of Grunt or a Grunt plugin, run `npm install grunt@VERSION --save-dev` where `VERSION` is the version you need.  This will install the specified version, adding it to your package.json devDependencies.
+특정 버전의 Grunt나 Grunt plugin이 필요하다면, `npm install grunt@VERSION --save-dev`를 실행한다. 이때 `VERSION`에는 여러분이 필요한 버전을 넣어준다. 그러면 nmp이 그 버전을 설치하고 알아서 package.json의 devDependencies에 이를 추가한다.
 
-Note that a [tilde version range] will be used in your `package.json` when you add the `--save-dev` flag to `npm install`. This is typically good, as new patch releases of the specified version will automatically be upgraded as development continues, per [semver].
+`npm install`과 `--save-dev` 옵션을 같이 쓸 때, `package.json`에서 추가되는 모듈의 버전은 [tilde version range]이 사용된다. 이는 장점이 많다. [semver]단위로 개발이 지속되기 때문에 지정한 버전에 새로운 패치가 릴리즈 되면 자동으로 업그레이드한다.
 
 [tilde version range]: https://npmjs.org/doc/json.html#Tilde-Version-Ranges
 [semver]: http://semver.org
 
 ## Installing a published development version
-Periodically, as new functionality is being developed, Grunt builds may be published to npm. These builds will _never_ be installable without explicitly specifying a version number, and will typically have a build number or alpha/beta/release candidate designation.
+배포된 개발 버전도 설치할 수 있다. 신규 기능이 계속 개발되고 있기 때문에, 빌드된 Grunt가 정기적으로  npm에 배포된다. 이 빌드 판은 명시적으로 버전을 지정하지 않고는 설치할 수 없다. 그래서 보통은 빌드 넘버나 alpha/beta/release 같은 명칭을 갖고 있다.
 
-Like installing a specific version of grunt, run `npm install grunt@VERSION --save-dev` where `VERSION` is the version you need, and npm will install that version of Grunt in your project folder, adding it to your `package.json` devDependencies.
+Grunt 특정 버전 설치과정과 동일하게 `npm install grunt@VERSION --save-dev` 컴멘드 명령어에 필요한 `VERSION`을 넣어서 실하면 npm이 프로젝트 폴더에 그 버전의 Grunt를 설치하고`package.json`의 devDependencies에 모듈 버전을 추가한다.
 
-Note that regardless of the version you specify, a [tilde version range][] will be specified in `package.json`. **This is very bad**, as new, possibly incompatible, patch releases of the specified development version may be installed by npm, breaking your build.
+한가지, 여러분이 지정한 버전과 상관없이 [tilde version range][]가 `package.json`에 설정된다. **이건 별로 좋지 않다.** 지정한 개발 버전에 신규 패치가 릴리즈 되었고 그 패치가 여러분의 빌드를 깨는 코드라 해도 npm을 통해서 설치될 수 있기 때문이다.
 
-_In this case it is **very important** that you manually edit your `package.json` and remove the ~ (tilde) from the version number. This will lock in the exact development version that you have specified._
+_이런 경우, 수동으로 `package.json`의 devDependencies에서 ~(tilde)를 **꼭 제거해야 한다.** 그러면 grunt는 그 특정 개발 버전에만 한정된다._
 
-The same process may be used to install a published development version of a Grunt plugin.
+이 과정은 Grutn plugin에서도 동일하다.
 
 ## Installing directly from github
-If you want to install a bleeding-edge, unpublished version of Grunt or Grunt plugin, follow the instructions for specifying a [git URL as a dependency](https://npmjs.org/doc/json.html#Git-URLs-as-Dependencies) and be sure to specify an actual commit SHA (not a branch name) as the `commit-ish`. This will guarantee that your project always uses that exact version of grunt.
+미배포 버전의 Grunt나 Grunt plugin의 위험을 감수할 생각이 있다면,
+[dependency로 git URL](https://npmjs.org/doc/json.html#Git-URLs-as-Dependencies)을 지정하는 방법을 익혀라. 그리고 `commit-ish`로 실제 커밋 SHA(branch 명이 아님)를 지정한다. 이러면 버전을 꼭 찝은 grunt를 보장받을 수 있다.
 
-The specified git URL may be that of the official Grunt repo or a fork.
+git URL은 공식 Grunt 레파지토리나 포크받은 레파지토리의 URL이 된다.
