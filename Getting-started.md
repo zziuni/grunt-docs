@@ -185,6 +185,7 @@ module.exports = function(grunt) {
 프로젝트 전용 task라면 `Gruntfile`안에 정의할 필요없이. 별도의 `.js` 파일로 정의하고 [[grunt.loadTasks|grunt#grunt.loadtasks]] 메서드로 불러와도 된다.
 
 ## Further Reading
+
 * [[Installing grunt]] 가이드는 인스톨 스펙, 프로덕션, 개발, Grunt와 grunt-cli의 버전에 대한 상세한 정보를 제공한다.
 * [[Configuring Tasks]] 가이드는 `Gruntfile`에서 task, target, option, file을 설정하는 방법을 상세하게 설명한다. tempaltes, globbing pattern, importing external data도 설명한다.
 * [[Creating Tasks]] 가이드에는 Grunt task의 타입간의 차이점 목록이 있으며, task와 configuration의 샘플도 제공한다.
@@ -201,3 +202,4 @@ module.exports = function(grunt) {
 [concatenation]: https://github.com/gruntjs/grunt-contrib-concat
 [linting]: https://github.com/gruntjs/grunt-contrib-jshint
 [grunt.loadTasks]: https://github.com/gruntjs/grunt/wiki/grunt.task
+
