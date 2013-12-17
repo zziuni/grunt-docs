@@ -152,7 +152,7 @@ grunt.initConfig({
 ```
 
 ### Loading Grunt plugins and tasks
-자주 사용하는 [concatenation], [minification], [linting]같은 task들은 [grunt plugins]으로 설정해서 사용할 수 있다. 즉, `package.json`의 dependency에 플러그인을 설정했다면, `npm install`을 통해서 이미 설치된 것이므로, 간단한 코드 추가로 `Gruntfile`에서 사용 가능하다.
+자주 사용하는 [concatenation], [minification][grunt-contrib-uglify], [linting]같은 task들은 [grunt plugins](https://github.com/gruntjs)으로 설정해서 사용할 수 있다. 즉, `package.json`의 dependency에 플러그인을 설정했다면, `npm install`을 통해서 이미 설치된 것이므로, 간단한 코드 추가로 `Gruntfile`에서 사용 가능하다.
 
 ```js
 // "uglify" task를 지원하는 플러그인 로드.
