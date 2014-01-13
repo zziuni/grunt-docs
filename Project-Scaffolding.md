@@ -63,7 +63,7 @@ grunt-init는 공식적으로 다음 템플릿들을 제공한다.
 파일을 복사하고 싶지 않다면 `destpath`에 `false`을 지정한다. `sourcepath`에서는 glob 패턴을 쓸 수 있다. 
 
 ## Specifying default prompt answers
-컴멘드 라인에서 grunt-init를 실행할 때, 몇가지 질문에 답을 해야 한다. 각 질문은 하드 코딩된 기본값이 있거나, 해당 환경에서 그 값을 찾는다. 만약 특정 기본값을 덥어쓰고 싶다면, `~/.grunt-init/defaults.json` 파일을 적용한다. (윈도는 `%USERPROFILE%\.grunt-init\defaults.json`파일)
+커맨드 라인에서 grunt-init를 실행할 때, 몇가지 질문에 답을 해야 한다. 각 질문은 하드 코딩된 기본값이 있거나, 해당 환경에서 그 값을 찾는다. 만약 특정 기본값을 덥어쓰고 싶다면, `~/.grunt-init/defaults.json` 파일을 적용한다. (윈도는 `%USERPROFILE%\.grunt-init\defaults.json`파일)
 
 예를 들어, 기본 설정된 이름과 다른 이름을 사용하고 싶고, 이메일 주소는 쓰고 싶지 않고, 자동으로 url이 지정되길 원한다면 다음처럼 `defaults.json` 파일을 만든다.
 
@@ -336,7 +336,7 @@ jQuery 프로젝트인 경우, 프로젝트에 필요한 jQuery 버전. 이 버�
 프로젝트에 필요한 Node.js의 버전. 이 버전은 유효한 semantic version로 범위를 기술해야 한다. 
 
 ### npm_test
-프로텍트의 테스트 코드를 실행할 컴멘드 명령어. 기본값은 `grunt`다. 
+프로텍트의 테스트 코드를 실행할 커맨드 명령어. 기본값은 `grunt`다. 
 
 ### repository
 프로젝트의 git 레파지토리. 기본값은 github URL이라고 가정한다. 
