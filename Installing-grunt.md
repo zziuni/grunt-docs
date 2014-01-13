@@ -14,7 +14,7 @@ Grunt와 Grunt plugin은 [package.json](https://npmjs.org/doc/json.html)의 [dev
 ## Installing a published development version
 배포된 개발 버전도 설치할 수 있다. 신규 기능이 계속 개발되고 있기 때문에, 빌드된 Grunt가 정기적으로  npm에 배포된다. 이 빌드 판은 명시적으로 버전을 지정하지 않고는 설치할 수 없다. 그래서 보통은 빌드 넘버나 alpha/beta/release 같은 명칭을 갖고 있다.
 
-Grunt 특정 버전 설치과정과 동일하게 `npm install grunt@VERSION --save-dev` 컴멘드 명령어에 필요한 `VERSION`을 넣어서 실하면 npm이 프로젝트 폴더에 그 버전의 Grunt를 설치하고`package.json`의 devDependencies에 모듈 버전을 추가한다.
+Grunt 특정 버전 설치과정과 동일하게 `npm install grunt@VERSION --save-dev` 커멘드 명령어에 필요한 `VERSION`을 넣어서 실하면 npm이 프로젝트 폴더에 그 버전의 Grunt를 설치하고`package.json`의 devDependencies에 모듈 버전을 추가한다.
 
 한가지, 여러분이 지정한 버전과 상관없이 [tilde version range][]가 `package.json`에 설정된다. **이건 별로 좋지 않다.** 지정한 개발 버전에 신규 패치가 릴리즈 되었고 그 패치가 여러분의 빌드를 깨는 코드라 해도 npm을 통해서 설치될 수 있기 때문이다.
 

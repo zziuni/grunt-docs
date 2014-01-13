@@ -112,7 +112,7 @@ watch: {
 }
 ```
 
-이 task는 컴멘드 라인에 `grunt watch`를 입력해서 실행할 수 있다. 그러면, 설정한 파일에 어떤 변화가 감지될 때, 지정한 task들을 순서대로 실행한다. (여기서는 JSHint 확인을 위해서 같은 대상파일을 사용했다.)
+이 task는 커멘드 라인에 `grunt watch`를 입력해서 실행할 수 있다. 그러면, 설정한 파일에 어떤 변화가 감지될 때, 지정한 task들을 순서대로 실행한다. (여기서는 JSHint 확인을 위해서 같은 대상파일을 사용했다.)
 
 이제, 필요한 Grunt 플러그인을 불러와야 하는데, 이들은 사전에 npm을 통해서 설치되어있어야 한다.
 
@@ -127,10 +127,10 @@ grunt.loadNpmTasks('grunt-contrib-concat');
 그리고 나서 task를 몇 개 설정한다. 가장 중요한건 default task다.
 
 ```javascript
-// 컴멘드 라인에 "grunt test"를 입력하면 실행된다.
+// 커멘드 라인에 "grunt test"를 입력하면 실행된다.
 grunt.registerTask('test', ['jshint', 'qunit']);
 
-// default task는 컴멘드 라인에 "grunt"만 입력했을 때 실행할 task들이다.
+// default task는 커멘드 라인에 "grunt"만 입력했을 때 실행할 task들이다.
 grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
 ```
 
